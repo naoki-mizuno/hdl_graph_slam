@@ -102,6 +102,16 @@ target_link_libraries(scan_matching_odometry_nodelet
 )
 
 
+add_library(standard_odometry_nodelet
+  apps/standard_odometry_nodelet.cpp
+  src/hdl_graph_slam/registrations.cpp
+)
+target_link_libraries(standard_odometry_nodelet
+  ${catkin_LIBRARIES}
+  ${PCL_LIBRARIES}
+)
+
+
 add_library(hdl_graph_slam_nodelet
   apps/hdl_graph_slam_nodelet.cpp
   src/hdl_graph_slam/graph_slam.cpp
